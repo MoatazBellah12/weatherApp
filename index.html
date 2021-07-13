@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+    <!-- css -->
+
+    <link rel="stylesheet" href="CSS/all.min.css">
+    <link rel="stylesheet" href="CSS/styleSheet.css">
+    <link rel="stylesheet" href="CSS/mediaQuery.css">
+
+    <title>Weather app</title>
+</head>
+
+<body>
+    <div id="loading">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home"><img src="imgs/cloud.png" alt="cloud">Weather</a>
+            <button id="navIcon" class="navbar-toggler">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </button>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#weather">Weather News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#mobile_app">Mobile App</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#subscribe">Subscribe</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="menu" class="flex-column justify-content-center align-items-center text-center position-fixed">
+        <ul>
+            <li class="nav-item">
+                <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#weather">Weather News</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#mobile_app">Mobile App</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#subscribe">Subscribe</a>
+            </li>
+        </ul>
+    </div>
+
+    <!--end of </nav> section-->
+
+    <header id="home" class="d-flex justify-content-center align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1>Weather App</h1>
+                    <p>Having an up to date information about the weather helps us to take well-read decisions. These
+                        weather apps constantly update the forecasts for a day or hour or sometimes for even a minute.
+                        These can be simply termed as the compact weather devices, as they do not only tell about the
+                        temperature of that specific region instead they can describe the accurate time of the sunrise
+                        and sunset, the time of the rainfall, humidity levels, etc.</p>
+                </div>
+                <div class="col-lg-5 offset-lg-1 d-flex justify-content-center align-items-center"><img
+                        src="imgs/weather.webp" alt="weather Image" class="w-100"></div>
+            </div>
+        </div>
+    </header>
+
+    <!--end of </header> section-->
+
+    <section id="weather" class="d-flex justify-content-center align-items-center py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="search d-flex align-items-center position-relative w-100 mb-4">
+                        <div
+                            class="searchIcon d-flex justify-content-center align-items-center position-absolute rounded-circle">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <input id="searchBox" placeholder="Search City . . ." type="text" name="search"
+                            class="form-control w-100">
+                    </div>
+                </div>
+                <div class="col-lg-4 px-3 py-2">
+                    <div class="item shadow d-flex flex-column overflow-hidden">
+                        <div class="item-header d-flex align-items-center justify-content-between">
+                            <span id="day"></span>
+                            <span id="date"></span>
+                        </div>
+                        <div class="item-body d-flex flex-column justify-content-center">
+                            <span id="city"></span>
+                            <div class="temp d-flex justify-content-between align-items-center">
+                                <div class="tempreature"><span id="tempDeg"></span><sup>o</sup>C</div>
+                                <div id="tempIcon"><img src="" alt="temperature icon" class="w-100"></div>
+                            </div>
+                        </div>
+                        <div class="item-footer">
+                            <span id="desc"></span>
+                            <div class="details d-flex justify-content-start align-items-center">
+                                <div class="humidty pr-2"><i class="fas fa-umbrella"></i><span class="mx-1"
+                                        id="humidityRatio"></span>%</div>
+                                <div class="wind px-2"><i class="fas fa-wind"></i><span class="mx-1"
+                                        id="windSpeed"></span>km/h</div>
+                                <div class="compass px-2"><i class="far fa-compass"></i><span class="mx-1"
+                                        id="windDir"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 px-3 py-2">
+                    <div class="item shadow d-flex flex-column overflow-hidden">
+                        <div class="item-header d-flex align-items-center justify-content-center">
+                            <span id="day1"></span>
+                        </div>
+                        <div class="item-body d-flex flex-column">
+                            <div class="temp d-flex justify-content-center align-items-center flex-column">
+                                <div id="tempIconDay1"><img src="" alt="temperature icon" class="w-100"></div>
+                                <div class="maxTempreature"><span id="maxDegDay1"></span><sup>o</sup>C</div>
+                                <div class="minTempreature mb-3"><span id="minDegDay1"></span><sup>o</sup>C</div>
+                                <span id="desc1"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 px-3 py-2">
+                    <div class="item shadow d-flex flex-column overflow-hidden">
+                        <div class="item-header d-flex align-items-center justify-content-center">
+                            <span id="day2"></span>
+                        </div>
+                        <div class="item-body d-flex flex-column">
+                            <div class="temp d-flex justify-content-center align-items-center flex-column">
+                                <div id="tempIconDay2"><img src="" alt="temperature icon" class="w-100"></div>
+                                <div class="maxTempreature"><span id="maxDegDay2"></span><sup>o</sup>C</div>
+                                <div class="minTempreature mb-3"><span id="minDegDay2"></span><sup>o</sup>C</div>
+                                <span id="desc2"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end of </weather> section -->
+
+    <section id="mobile_app" class="py-3 my-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 d-flex justify-content-center align-items-center"><img src="imgs/mobile app.webp"
+                        alt="mobile app" class="w-100"></div>
+                <div
+                    class="col-lg-7 offset-lg-1 d-flex justify-content-center align-items-center text-center flex-column">
+                    <h3>Mobile App</h3>
+                    <p>This weather app is one of best free weather apps with full features:
+                        Local weather weather map (weather map service) and weather widgets.
+                    </p>
+                    <div class="btns mt-4">
+                        <a>Download Android</a>
+                        <a>Download IOS</a>
+                    </div>
+                    <div class="mess text-danger text-center pt-3"><span>not avaliable yet</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end of </mobile_app> section -->
+
+    <section id="subscribe" class="py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 d-flex justify-content-center align-items-center text-center flex-column">
+                    <h3>Subscribe</h3>
+                    <p>Get daily weather updates, quotes & more..</p>
+                    <input type="email" placeholder="Enter your email to subscribe ." class="form-control">
+                    <a>Subscribe</a>
+                    <div class="mess text-danger text-center"><span>under development</span></div>
+                </div>
+                <div class="col-lg-4 offset-lg-1 d-flex justify-content-center align-items-center mb-4"><img
+                        src="imgs/subscribe.webp" alt="mobile app" class="w-100"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end of </contact> section -->
+
+    <footer class="d-flex justify-content-center align-items-center">
+        <div class="d-flex justify-content-center align-items-center flex-column">
+            <div class="Dev">Designed by<span>Moataz Bellah</span></div>
+            <div class="copyRights">Copyright © 2021 . All rights reserved</div>
+            <div class="links">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-pinterest"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-google-plus"></i>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="JS/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script src="JS/main.js"></script>
+</body>
+
+</html>
